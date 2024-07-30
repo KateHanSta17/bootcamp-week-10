@@ -1,5 +1,3 @@
-// TODO: Debug the code so that Comment shows the text when its printMetaData() function is run.
-
 class ForumItem {
   constructor(authorName, createdOn) {
     this.authorName = authorName;
@@ -28,19 +26,16 @@ class Comment extends ForumItem {
     super(authorName, createdOn);
     this.text = text;
   }
+
+  // Overriding the printMetaData method
+  printMetaData() {
+    console.log(`Created by ${this.authorName} on ${this.createdOn} with text: "${this.text}"`);
+  }
 }
 
-const newPost = new BlogPost(
-  'John Doe',
-  'My Fourth Post',
-  '12/19/2021'
-);
+const newPost = new BlogPost('John Doe', 'My Fourth Post', '12/19/2021');
 
-const newComment = new Comment(
-  'Jane Doe',
-  '12/20/2021',
-  'This post is really awesome!',
-);
+const newComment = new Comment('Jane Doe', '12/20/2021', 'This post is really awesome!');
 
 newPost.printMetaData();
 
